@@ -1,0 +1,36 @@
+{
+  "name": "photo-frame",
+  "version": "1.0.0",
+  "description": "Helps to fulfill users' requirements and provides the world's best photo frames with unique designs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdqtonz/Q-Frame-Backend.git"
+  },
+  "keywords": [
+    "Photos",
+    "Photo",
+    "Frames",
+    "Frame"
+  ],
+  "author": "Hiten",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hdqtonz/Q-Frame-Backend/issues"
+  },
+  "homepage": "https://github.com/hdqtonz/Q-Frame-Backend#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.5.0",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  }
+}
