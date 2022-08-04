@@ -6,6 +6,7 @@ require("./config/db");
 
 const appRoutes = require("./routes/index");
 const auth = require("./middleware/auth");
+const admin = require("./middleware/admin");
 
 const app = express();
 const Port = process.env.PORT || 3000;
@@ -19,7 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 // routes
 app.use("/", appRoutes);
 
-app.get("/", auth, (req, res) => {
+app.get("/", auth, admin, (req, res) => {
   res.send("Welcome Home!");
 });
 

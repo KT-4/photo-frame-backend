@@ -1,4 +1,3 @@
-const { json } = require("express");
 const mongoose = require("mongoose");
 const Constants = require("../config/constants");
 
@@ -25,14 +24,10 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: Constants.DefaultProfileImage,
   },
-  country: {
+  role: {
     type: String,
-  },
-  state: {
-    type: String,
-  },
-  city: {
-    type: String,
+    enum: [Constants.roles.admin, Constants.roles.user],
+    default: Constants.roles.user,
   },
   token: {
     type: String,

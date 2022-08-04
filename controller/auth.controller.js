@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 //--------User Register Controller--------//
 const userRegister = async (req, res) => {
   try {
-    const { first_name, last_name, email, password } = req.body;
+    const { first_name, last_name, email, password, role } = req.body;
 
     if (!(email && password && first_name && last_name)) {
       res.status(400).send("All input is required");
@@ -25,12 +25,13 @@ const userRegister = async (req, res) => {
       first_name,
       last_name,
       email,
+      role,
       password: hashPassword,
     });
 
     // Create jwt token
     const token = jwt.sign(
-      { user_id: user._id, email },
+      { user_id: user._id, email, role: role },
       process.env.TOKEN_KEY,
       {
         expiresIn: "24h",
@@ -59,7 +60,7 @@ const userLoging = async (req, res) => {
     if (user && (await bcrypt.compare(password, user.password))) {
       // Create token
       const token = jwt.sign(
-        { user_id: user._id, email },
+        { user_id: user._id, email, role: user.role },
         process.env.TOKEN_KEY,
         {
           expiresIn: "24h",
@@ -69,6 +70,8 @@ const userLoging = async (req, res) => {
       user.token = token;
 
       res.status(200).send(user);
+    } else {
+      res.status(401).send("Please Check your Credentials");
     }
   } catch (e) {
     res.status(500).send();

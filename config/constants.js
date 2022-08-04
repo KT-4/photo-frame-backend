@@ -1,4 +1,9 @@
 module.exports = {
   DefaultProfileImage:
-    "http://images.fineartamerica.com/images-medium-large/alien-face-.jpg",
+    "https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg",
+
+  roles: {
+    admin: "Admin",
+    user: "User",
+  },
 };
