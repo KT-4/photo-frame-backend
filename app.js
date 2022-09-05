@@ -1,6 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 const cors = require("cors");
+const multiparty = require('multiparty-express')
 require("dotenv").config();
 require("./config/db");
 
@@ -20,9 +21,12 @@ app.use(express.urlencoded({ extended: false }));
 // routes
 app.use("/", appRoutes);
 
-app.get("/", auth, admin, (req, res) => {
+app.post("/welcome",auth,(req, res) => {
   res.send("Welcome Home!");
 });
+app.get("/welcome",admin,(req,res)=>{
+   res.send("welcome from admin")
+})
 
 // Create a Server
 app.listen(Port, () => console.log(`Server runing on Port :${Port}`));
