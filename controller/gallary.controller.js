@@ -1,22 +1,23 @@
-const multer = require('multer')
-const Gallary = require('../models/gallary')
- 
-const storege = multer.diskStorege({
-    destination:(req,file,cb)=>{
-        console.log(file)
 
-        const filetype = '';
-        if(file.mimetype === 'image/gif'){
-            filetype = 'gif';
-        }
-        if(file.mimetype === 'image/png'){
-            filetype = 'png';
-        }
-        if(file.mimetype === 'image/jpeg'){
-            filetype = 'jpg'
-        }
-        cb(null,'image-'+Date.now()+'.'+filetype);
-    } 
-});
 
-module.exports = storege;
+
+
+
+// const uploadFile = (req,res,next) =>{
+//     if(!req.file){
+//         return res.status(500).send({message:'Upload fail'});
+//     }else{
+//         req.body.imgUrl = `process.env.imageurl${req.file.filetype}`
+        
+//         Gallary.create(req.body,(err,gallary)=>{
+//             if(err){
+//                 console.log(err)
+//                 return next(err)
+//             }
+//             res.json(gallary)
+//         })
+//     }
+// }
+
+
+// module.exports = storege;

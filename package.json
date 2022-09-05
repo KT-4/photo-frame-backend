@@ -7,22 +7,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hdqtonz/Q-Frame-Backend.git"
-  },
-  "keywords": [
-    "Photos",
-    "Photo",
-    "Frames",
-    "Frame"
-  ],
-  "author": "Hiten",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hdqtonz/Q-Frame-Backend/issues"
-  },
-  "homepage": "https://github.com/hdqtonz/Q-Frame-Backend#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
