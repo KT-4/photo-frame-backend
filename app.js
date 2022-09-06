@@ -20,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 
 // routes
 app.use("/", appRoutes);
+app.use('/static',express.static('public'))
 
 app.post("/welcome",auth,(req, res) => {
   res.send("Welcome Home!");

@@ -1,13 +1,17 @@
 const mongoose = require('mongoose')
 
 const gallarySchema = new mongoose.Schema({
-    id:number,
-    imgUrl:String,
-    imgTitle:String,
-    imgDesc:String,
-    uploded:{type:Date,default:Date.now()}
-
-})
+    _id:mongoose.Schema.Types.ObjectId,
+     name:{
+        type:String
+      },
+      avatar:{
+        type:String
+      },
+    },
+    {
+        collation:'users'
+    })
 
 const Gallary = new mongoose.model('gallary',gallarySchema)
 module.exports = Gallary;
