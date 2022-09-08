@@ -6,6 +6,7 @@ require("dotenv").config();
 require("./config/db");
 
 const appRoutes = require("./routes/index");
+const gallryRoutes = require('./routes/gallary.route')
 const auth = require("./middleware/auth");
 const admin = require("./middleware/admin");
 
@@ -19,7 +20,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // routes
-app.use("/", appRoutes);
+app.use("/",appRoutes);
+app.use("/",gallryRoutes);
 app.use('/static',express.static('public'))
 
 app.post("/welcome",auth,(req, res) => {
